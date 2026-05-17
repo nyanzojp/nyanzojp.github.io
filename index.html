@@ -3,68 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NYANZO - Profile</title>
+    <title>NYANZO OFFICIAL SITE</title>
     <style>
+        /* 全体の初期化とフォント設定 */
         body {
             margin: 0;
-            padding: 40px 0;
-            background-color: #FFF5FA; /* 全体の背景もほんのりピンクに */
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            padding: 0;
+            background-color: #FFF5FA; /* ほんのりピンク */
+            color: #28324B;
+            /* 筑紫ゴシック */
             font-family: "TsukuGothicPro-Regular", "筑紫ゴシック", "TsukuARoundGothic-Regular", sans-serif;
-        }
-
-        /* プロフィール全体のラッパー（343pxフルサイズ） */
-        .profile-container {
-            width: 343px;
             display: flex;
             flex-direction: column;
             align-items: center;
         }
 
-        /* メンバーの顔写真エリア */
-        .profile-avatar {
-            width: 100px;
-            height: 100px;
-            background-color: #F0A0CD; /* 写真がない時の仮色 */
-            border-radius: 50%; /* 綺麗な丸にする */
-            margin-bottom: 15px;
+        /* 横幅をアキコン指定の343pxに固定するメインコンテナ */
+        .site-wrapper {
+            width: 343px;
+            box-sizing: border-box;
+            padding-bottom: 60px; /* フッター上の余白 */
+        }
+
+        /* 1. ヘッダー（普通のサイトっぽいやつ） */
+        header {
+            width: 100%;
+            padding: 20px 0;
             display: flex;
+            justify-content: space-between;
             align-items: center;
-            justify-content: center;
-            color: #28324B;
-            font-weight: bold;
-            box-shadow: 0 4px 10px rgba(240, 160, 205, 0.3);
+            border-bottom: 1px solid #f7cfe6;
         }
-
-        /* 見出し（名前） */
-        .profile-title {
+        .logo {
             font-size: 20px;
-            color: #28324B;
-            margin: 0 0 25px 0;
             font-weight: bold;
-            letter-spacing: 0.05em;
+            color: #28324B;
+            text-decoration: none;
+        }
+        .nav-links {
+            font-size: 12px;
+            font-weight: bold;
+        }
+        .nav-links a {
+            color: #F0A0CD;
+            text-decoration: none;
+            margin-left: 10px;
         }
 
-        /* 343pxフルサイズ表のコンテナ */
+        /* 2. メインビジュアル（サイトの顔） */
+        .main-visual {
+            width: 100%;
+            height: 150px;
+            background-color: #F0A0CD; /* 本番はここに画像を入れるぞッピ */
+            margin: 20px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #FFF5FA;
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 0.1em;
+        }
+
+        /* 3. セクション（見出しと中身） */
+        section {
+            margin-top: 35px;
+            width: 100%;
+        }
+        .section-title {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            border-left: 4px solid #F0A0CD;
+            padding-left: 8px;
+        }
+        .section-text {
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        /* 4. 例の「343pxフルサイズ表」 */
         .profile-full-container {
             width: 100%; 
             border-top: 0.5px solid #f7cfe6;
             border-bottom: 0.5px solid #f7cfe6;
             background-color: #FFF5FA;
         }
-
         .lab8-table-full {
             width: 100%;
             border-collapse: collapse;
             table-layout: fixed;
         }
-
         .lab8-table-full tr {
             border-bottom: 0.5px solid #f7cfe6;
         }
-
         .lab8-table-full th {
             width: 95px; 
             background-color: #F0A0CD;
@@ -76,7 +109,6 @@
             vertical-align: middle;
             box-sizing: border-box;
         }
-
         .lab8-table-full td {
             width: 248px;
             color: #28324B;
@@ -87,42 +119,74 @@
             word-break: break-all;
             line-height: 1.5;
         }
-
         .row-high th, .row-high td {
             padding: 20px 12px !important;
         }
-
         .profile-link-full {
             color: #F0A0CD !important;
             text-decoration: underline;
             font-weight: bold;
         }
+
+        /* 5. フッター */
+        footer {
+            width: 100%;
+            text-align: center;
+            font-size: 11px;
+            color: #6E8296;
+            margin-top: 50px;
+            padding-top: 15px;
+            border-top: 1px solid #f7cfe6;
+        }
     </style>
 </head>
 <body>
 
-    <div class="profile-container">
-        <div class="profile-avatar">
-            丸
+    <div class="site-wrapper">
+        
+        <header>
+            <a href="index.html" class="logo">NYANZO</a>
+            <div class="nav-links">
+                <a href="#about">ABOUT</a>
+                <a href="#member">MEMBER</a>
+            </div>
+        </header>
+
+        <div class="main-visual">
+            WELCOME
         </div>
 
-        <h1 class="profile-title">MEMBER PROFILE</h1>
+        <section id="about">
+            <h2 class="section-title">ABOUT</h2>
+            <div class="section-text">
+                ここにNYANZOの紹介文を入れるぞッピ！21歳のアキコンが世界に向けて発信する、最高のクリエイティブプロジェクトの全貌をここに書くんや。
+            </div>
+        </section>
 
-        <div class="profile-full-container">
-            <table class="lab8-table-full">
-                <tbody>
-                    <tr><th>名前</th><td>ラブ♡丸（読み：ラブまる）</td></tr>
-                    <tr><th>本名</th><td>同一</td></tr>
-                    <tr><th>入居時期</th><td>2008, 2009年（推定）</td></tr>
-                    <tr><th>趣味</th><td>お金儲け / 大会の主催</td></tr>
-                    <tr><th>特技</th><td>大声で叫ぶ</td></tr>
-                    <tr class="row-high"><th>受賞</th><td><span style="color: #6E8296;">未記述</span></td></tr>
-                    <tr class="row-high"><th>他の活動</th>
-                        <td><a href="https://nyanzo.wixsite.com/japan/artist/sapporosourpapers" target="_blank" class="profile-link-full">サッポロサワーペーパーズ</a></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+        <section id="member">
+            <h2 class="section-title">MEMBER PROFILE</h2>
+            
+            <div class="profile-full-container">
+                <table class="lab8-table-full">
+                    <tbody>
+                        <tr><th>名前</th><td>ラブ♡丸（読み：ラブまる）</td></tr>
+                        <tr><th>本名</th><td>同一</td></tr>
+                        <tr><th>入居時期</th><td>2008, 2009年（推定）</td></tr>
+                        <tr><th>趣味</th><td>お金儲け / 大会の主催</td></tr>
+                        <tr><th>特技</th><td>大声で叫ぶ</td></tr>
+                        <tr class="row-high"><th>受賞</th><td><span style="color: #6E8296;">未記述</span></td></tr>
+                        <tr class="row-high"><th>他の活動</th>
+                            <td><a href="https://nyanzo.wixsite.com/japan/artist/sapporosourpapers" target="_blank" class="profile-link-full">サッポロサワーペーパーズ</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <footer>
+            &copy; 2026 NYANZO All Rights Reserved.
+        </footer>
+
     </div>
 
 </body>
