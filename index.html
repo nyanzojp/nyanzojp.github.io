@@ -5,20 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NYANZO - Artist Profile</title>
     <style>
-        /* ページ全体の背景とフォント設定 */
         body {
             margin: 0;
-            padding: 20px 0;
-            background-color: #fcfcfc;
+            padding: 40px 0;
+            background-color: #FFF5FA; /* 全体の背景もほんのりピンクに */
             display: flex;
-            justify-content: center;
-            /* 筑紫ゴシック（アキコンのこだわり） */
+            flex-direction: column;
+            align-items: center;
             font-family: "TsukuGothicPro-Regular", "筑紫ゴシック", "TsukuARoundGothic-Regular", sans-serif;
         }
 
-        /* 343pxフルサイズ表のコンテナ・角丸なし */
+        /* プロフィール全体のラッパー（343pxフルサイズ） */
+        .profile-container {
+            width: 343px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* メンバーの顔写真エリア */
+        .profile-avatar {
+            width: 100px;
+            height: 100px;
+            background-color: #F0A0CD; /* 写真がない時の仮色 */
+            border-radius: 50%; /* 綺麗な丸にする */
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #28324B;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(240, 160, 205, 0.3);
+        }
+
+        /* 見出し（名前） */
+        .profile-title {
+            font-size: 20px;
+            color: #28324B;
+            margin: 0 0 25px 0;
+            font-weight: bold;
+            letter-spacing: 0.05em;
+        }
+
+        /* 343pxフルサイズ表のコンテナ */
         .profile-full-container {
-            width: 343px; 
+            width: 100%; 
             border-top: 0.5px solid #f7cfe6;
             border-bottom: 0.5px solid #f7cfe6;
             background-color: #FFF5FA;
@@ -34,7 +65,6 @@
             border-bottom: 0.5px solid #f7cfe6;
         }
 
-        /* 1列目：項目（幅95px） */
         .lab8-table-full th {
             width: 95px; 
             background-color: #F0A0CD;
@@ -47,7 +77,6 @@
             box-sizing: border-box;
         }
 
-        /* 2列目：内容（幅248px） */
         .lab8-table-full td {
             width: 248px;
             color: #28324B;
@@ -59,12 +88,10 @@
             line-height: 1.5;
         }
 
-        /* 受賞・他の活動用の高め設定 */
         .row-high th, .row-high td {
             padding: 20px 12px !important;
         }
 
-        /* リンク設定 */
         .profile-link-full {
             color: #F0A0CD !important;
             text-decoration: underline;
@@ -74,20 +101,28 @@
 </head>
 <body>
 
-    <div class="profile-full-container">
-        <table class="lab8-table-full">
-            <tbody>
-                <tr><th>名前</th><td>ラブ♡丸（読み：ラブまる）</td></tr>
-                <tr><th>本名</th><td>同一</td></tr>
-                <tr><th>入居時期</th><td>2008, 2009年（推定）</td></tr>
-                <tr><th>趣味</th><td>お金儲け / 大会の主催</td></tr>
-                <tr><th>特技</th><td>大声で叫ぶ</td></tr>
-                <tr class="row-high"><th>受賞</th><td><span style="color: #6E8296;">未記述</span></td></tr>
-                <tr class="row-high"><th>他の活動</th>
-                    <td><a href="https://nyanzo.wixsite.com/japan/artist/sapporosourpapers" target="_blank" class="profile-link-full">サッポロサワーペーパーズ</a></td>
-                </tr>
-            </tbody>
-        </table>
+    <div class="profile-container">
+        <div class="profile-avatar">
+            丸
+        </div>
+
+        <h1 class="profile-title">MEMBER PROFILE</h1>
+
+        <div class="profile-full-container">
+            <table class="lab8-table-full">
+                <tbody>
+                    <tr><th>名前</th><td>ラブ♡丸（読み：ラブまる）</td></tr>
+                    <tr><th>本名</th><td>同一</td></tr>
+                    <tr><th>入居時期</th><td>2008, 2009年（推定）</td></tr>
+                    <tr><th>趣味</th><td>お金儲け / 大会の主催</td></tr>
+                    <tr><th>特技</th><td>大声で叫ぶ</td></tr>
+                    <tr class="row-high"><th>受賞</th><td><span style="color: #6E8296;">未記述</span></td></tr>
+                    <tr class="row-high"><th>他の活動</th>
+                        <td><a href="https://nyanzo.wixsite.com/japan/artist/sapporosourpapers" target="_blank" class="profile-link-full">サッポロサワーペーパーズ</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 
 </body>
