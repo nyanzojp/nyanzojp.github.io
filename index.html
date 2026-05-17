@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NYANZO OFFICIAL SITE</title>
+    <title>NYANZO OFFICIAL SITE - PC Premium</title>
     <style>
         /* 全体の初期化とフォント設定 */
         body {
@@ -11,81 +11,123 @@
             padding: 0;
             background-color: #FFF5FA; /* ほんのりピンク */
             color: #28324B;
-            /* 筑紫ゴシック */
+            /* 筑紫ゴシック（アキコンのこだわり） */
             font-family: "TsukuGothicPro-Regular", "筑紫ゴシック", "TsukuARoundGothic-Regular", sans-serif;
             display: flex;
             flex-direction: column;
             align-items: center;
         }
 
-        /* 横幅をアキコン指定の343pxに固定するメインコンテナ */
+        /* PC版のメインコンテナ（広々と960pxを確保） */
         .site-wrapper {
-            width: 343px;
+            width: 960px;
             box-sizing: border-box;
-            padding-bottom: 60px; /* フッター上の余白 */
+            padding-bottom: 80px;
         }
 
-        /* 1. ヘッダー（普通のサイトっぽいやつ） */
+        /* 1. ヘッダー */
         header {
             width: 100%;
-            padding: 20px 0;
+            padding: 30px 0;
             display: flex;
             justify-content: space-between;
             align-items: center;
             border-bottom: 1px solid #f7cfe6;
         }
         .logo {
-            font-size: 20px;
+            font-size: 26px;
             font-weight: bold;
             color: #28324B;
             text-decoration: none;
+            letter-spacing: 0.05em;
         }
         .nav-links {
-            font-size: 12px;
+            font-size: 14px;
             font-weight: bold;
         }
         .nav-links a {
             color: #F0A0CD;
             text-decoration: none;
-            margin-left: 10px;
+            margin-left: 25px;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: #28324B; /* ホバーで色が変わる、妙 */
         }
 
-        /* 2. メインビジュアル（サイトの顔） */
+        /* 2. メインビジュアル（PCならではの大迫力） */
         .main-visual {
             width: 100%;
-            height: 150px;
-            background-color: #F0A0CD; /* 本番はここに画像を入れるぞッピ */
-            margin: 20px 0;
+            height: 350px;
+            background-color: #F0A0CD; /* ここにメインビジュアル画像を入れるぞ */
+            margin: 30px 0;
             display: flex;
             justify-content: center;
             align-items: center;
             color: #FFF5FA;
-            font-size: 24px;
+            font-size: 48px;
             font-weight: bold;
-            letter-spacing: 0.1em;
+            letter-spacing: 0.15em;
+            box-shadow: 0 10px 30px rgba(240, 160, 205, 0.15);
         }
 
-        /* 3. セクション（見出しと中身） */
+        /* 3. セクション共通 */
         section {
-            margin-top: 35px;
+            margin-top: 60px;
             width: 100%;
         }
         .section-title {
-            font-size: 16px;
+            font-size: 22px;
             font-weight: bold;
-            margin-bottom: 15px;
-            border-left: 4px solid #F0A0CD;
-            padding-left: 8px;
+            margin-bottom: 25px;
+            border-left: 6px solid #F0A0CD;
+            padding-left: 12px;
+            letter-spacing: 0.05em;
         }
         .section-text {
-            font-size: 14px;
-            line-height: 1.6;
-            margin-bottom: 20px;
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 30px;
         }
 
-        /* 4. 例の「343pxフルサイズ表」 */
+        /* ★PC版の真骨頂：2カラムレイアウト（横並び） */
+        .profile-flex-layout {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start; /* 上揃え */
+            margin-top: 30px;
+        }
+
+        /* 左側：顔写真エリア */
+        .profile-avatar-zone {
+            width: 260px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .profile-avatar {
+            width: 180px;
+            height: 180px;
+            background-color: #F0A0CD;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #FFF5FA;
+            font-size: 32px;
+            font-weight: bold;
+            box-shadow: 0 8px 20px rgba(240, 160, 205, 0.2);
+        }
+        .profile-avatar-caption {
+            margin-top: 15px;
+            font-size: 14px;
+            color: #6E8296;
+            font-weight: bold;
+        }
+
+        /* 右側：例の表（PC版サイズに横幅をワイド化：640px） */
         .profile-full-container {
-            width: 100%; 
+            width: 640px; 
             border-top: 0.5px solid #f7cfe6;
             border-bottom: 0.5px solid #f7cfe6;
             background-color: #FFF5FA;
@@ -99,28 +141,28 @@
             border-bottom: 0.5px solid #f7cfe6;
         }
         .lab8-table-full th {
-            width: 95px; 
+            width: 150px; /* PC版に合わせて少し広めに */
             background-color: #F0A0CD;
             color: #28324B;
-            font-size: 14px;
+            font-size: 15px;
             font-weight: bold;
-            padding: 10px 12px;
+            padding: 14px 18px;
             text-align: left;
             vertical-align: middle;
             box-sizing: border-box;
         }
         .lab8-table-full td {
-            width: 248px;
+            width: 490px;
             color: #28324B;
-            font-size: 14px;
-            padding: 10px 15px;
+            font-size: 15px;
+            padding: 14px 20px;
             vertical-align: middle;
             background-color: #FFF5FA;
             word-break: break-all;
-            line-height: 1.5;
+            line-height: 1.6;
         }
         .row-high th, .row-high td {
-            padding: 20px 12px !important;
+            padding: 24px 18px !important;
         }
         .profile-link-full {
             color: #F0A0CD !important;
@@ -128,14 +170,32 @@
             font-weight: bold;
         }
 
+        /* アニメーション（登場の魔法） */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .animate-fade-in {
+            opacity: 0;
+            animation: fadeInUp 1.2s ease-out forwards;
+        }
+        .delay-1 { animation-delay: 0.3s; }
+        .delay-2 { animation-delay: 0.6s; }
+
         /* 5. フッター */
         footer {
             width: 100%;
             text-align: center;
-            font-size: 11px;
+            font-size: 12px;
             color: #6E8296;
-            margin-top: 50px;
-            padding-top: 15px;
+            margin-top: 80px;
+            padding-top: 20px;
             border-top: 1px solid #f7cfe6;
         }
     </style>
@@ -152,34 +212,41 @@
             </div>
         </header>
 
-        <div class="main-visual">
-            WELCOME
+        <div class="main-visual animate-fade-in">
+            NYANZO PORTFOLIO
         </div>
 
-        <section id="about">
+        <section id="about" class="animate-fade-in delay-1">
             <h2 class="section-title">ABOUT</h2>
             <div class="section-text">
-                ここにNYANZOの紹介文を入れるぞッピ！21歳のアキコンが世界に向けて発信する、最高のクリエイティブプロジェクトの全貌をここに書くんや。
+                ここにNYANZOの紹介文を入れるぞッピ！PC版の広々としたレイアウトに合わせて、10年かけて完成させた「グラグラおじさん」の裏話や、世界観のこだわりを贅沢に書き連ねることができるぞ。
             </div>
         </section>
 
-        <section id="member">
+        <section id="member" class="animate-fade-in delay-2">
             <h2 class="section-title">MEMBER PROFILE</h2>
             
-            <div class="profile-full-container">
-                <table class="lab8-table-full">
-                    <tbody>
-                        <tr><th>名前</th><td>ラブ♡丸（読み：ラブまる）</td></tr>
-                        <tr><th>本名</th><td>同一</td></tr>
-                        <tr><th>入居時期</th><td>2008, 2009年（推定）</td></tr>
-                        <tr><th>趣味</th><td>お金儲け / 大会の主催</td></tr>
-                        <tr><th>特技</th><td>大声で叫ぶ</td></tr>
-                        <tr class="row-high"><th>受賞</th><td><span style="color: #6E8296;">未記述</span></td></tr>
-                        <tr class="row-high"><th>他の活動</th>
-                            <td><a href="https://nyanzo.wixsite.com/japan/artist/sapporosourpapers" target="_blank" class="profile-link-full">サッポロサワーペーパーズ</a></td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="profile-flex-layout">
+                <div class="profile-avatar-zone">
+                    <div class="profile-avatar">丸</div>
+                    <div class="profile-avatar-caption">LOV-MARU</div>
+                </div>
+
+                <div class="profile-full-container">
+                    <table class="lab8-table-full">
+                        <tbody>
+                            <tr><th>名前</th><td>ラブ♡丸（読み：ラブまる）</td></tr>
+                            <tr><th>本名</th><td>同一</td></tr>
+                            <tr><th>入居時期</th><td>2008, 2009年（推定）</td></tr>
+                            <tr><th>趣味</th><td>お金儲け / 大会の主催</td></tr>
+                            <tr><th>特技</th><td>大声で叫ぶ</td></tr>
+                            <tr class="row-high"><th>受賞</th><td><span style="color: #6E8296;">未記述</span></td></tr>
+                            <tr class="row-high"><th>他の活動</th>
+                                <td><a href="https://nyanzo.wixsite.com/japan/artist/sapporosourpapers" target="_blank" class="profile-link-full">サッポロサワーペーパーズ</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </section>
 
